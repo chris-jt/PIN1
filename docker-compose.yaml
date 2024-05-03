@@ -1,0 +1,16 @@
+version: '3'
+services:
+  jenkins:
+    container_name: jenkins-curso
+    image: mguazzardo/pipe-seg
+    ports:
+      - "8080:8080"
+    networks:
+      - host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/jenkins_home
+    restart: "unless-stopped"
+networks:
+  host:
+
